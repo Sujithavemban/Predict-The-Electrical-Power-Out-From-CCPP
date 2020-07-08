@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>ML_project_suji</title>
+  <style>
+            h1 {
+                text-align: center;
+                color: rgba(255,255,255);
+                padding-left:45px;
+            }
+            
+            u { 
+                 text-decoration: underline;
+              }
+            body {
+            	
+            	width:150%;
+            	height: 200%;
+ 				margin:100px;
+  				color:white;
+                background-image: url("https://www.thoughtco.com/thmb/Dg3k4D3hJ8cSzTnObPki8MTrs-Y=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-144635668-1d9932afb0cd44a2ad33b1f0329d6ec6.jpg");
+               
+            }
+            .login { 
+	       position: absolute;
+	         top: 33%;
+        	left: 47%;
+	        margin: -150px 0 0 -150px;
+	        width:400px;
+	        height:400px;
+}
+        
+        button{
+                background-color:rgba(51,51,255);
+                border: none;
+                color: rgba(224,224,224);
+                padding: 16px 35px;
+                text-align: center;
+
+                font-size: 16px;
+                margin: 15px 80px;
+                opacity: 1;
+                transition: 0.5s;
+                border-radius: 20px;
+            }    
+            input { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(255,255,255,0.2);
+	border: none;
+	outline: none;
+	padding: 15px;
+	font-size: 13px;
+	color: #FFFFFF;
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+	border: 3px solid rgba(255,255,255,0.2);
+	border-radius: 4px;
+	box-shadow: inset 255 35px 35px rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,0.1);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+.MAIN b{
+font-size:30px;
+font-weight:800px;
+text-align:center;
+font-family: 'Balsamiq Sans', cursive;
+left:50px;
+}
+            
+           
+</style>
+</head>
+
+<body>
+ <div class="login">
+	
+    <h1><b><u>Predict The Electrical Power Out From CCPP</u></b></h1>
+
+    <form action="{{ url_for('y_predict')}}"method="post">
+	<input type="text" name="Temperature(T)" placeholder="Temperature(T)" required="required" />
+    	<input type="text" name="Exahust vaccum(V)" placeholder="Exahust vaccum(V)" required="required" />
+        <input type="text" name="Ambient pressure(AP)" placeholder="Ambient pressure(AP)" required="required" />
+		<input type="text" name="Relative Humidity(RH)" placeholder="Relative Humidity(RH)" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Energy in (MW)</button>
+    
+    </form>
+ <b>{{ prediction_text }}</b>
+
+ </div>
+
+
+</body>
+</html>
+
